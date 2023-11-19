@@ -2,26 +2,158 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
 
-@media (prefers-color-scheme: dark) {
+@layer base { 
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+    /* Spacing */
+    --spacing-xxs :8px;
+    --spacing-xs : 16px;
+    --spacing-sm : 24px;
+    --spacing-md : 32px;
+    --spacing-lg : 48px;
+    --spacing-xl : 64px;
+    --spacing-xxl : 80px;
+    --spacing-xxxl : 128px;
+
+    /* Font sizes  */
+    /* Figma specifies EM values, Would Rem be preferred for scalability and ease of use?. as rem wont scale in relation to their parent*/
+    --font-size-h1-thin: 2.625rem;     /* 42px */
+    --font-size-h2-thin: 1.875rem;     /* 30px */
+    --font-size-h3-thin: 1.5rem;       /* 24px */
+    --font-size-h4-thin: 1.25rem;      /* 20px */
+    --font-size-h5-thin: 1.125rem;     /* 18px */
+    --font-size-h6-thin: 1rem;         /* 16px (Wrong value in figma, change) */  
+    --font-size-h7-thin: 0.875rem;     /* 14px */
+    --font-size-h8-thin: 0.75rem;      /* 12px (Wrong value in figma, change)  */ 
+    --font-size-h9-thin: 0.63rem;      /* 10px (Wrong value in figma, change)  */ 
+
+    --font-size-h1-regular: 4rem;          /* 64px (wrong in figma, change) */ 
+    --font-size-h2-regular: 3rem;          /* 48px (wrong in figma, change) */
+    --font-size-h3-regular: 2.625rem;      /* 42px (wrong in figma, change) */
+    --font-size-h4-regular: 1.875rem;      /* 30px */
+    --font-size-h5-regular: 1.5rem;        /* 24px */
+    --font-size-h6-regular: 1.25rem;       /* 20px */
+    --font-size-h7-regular: 1.125rem;      /* 18px */
+    --font-size-h8-regular: 1rem;          /* 16px */
+    --font-size-h9-regular: 0.875rem;      /* 14px */ 
+    --font-size-h10-regular: 0.75rem;      /* 14px */ 
+
+    /* Line height */
+    --line-height-40: 40px;
+    --line-height-32: 32px;  
+    --line-height-28: 28px; 
+    --line-height-26: 26px;
+    --line-height-20: 20px;
+    --line-height-18: 18px;  
+
+      /* Font Weight Variables */
+      --font-weight-light: 300;
+      --font-weight-regular: 600;   /* 3x Wrong value, duplicate in Figma. Fix */
+      --font-weight-semibold: 600;  /* Wrong value, duplicate in Figma. Fix */
+      --font-weight-bold: 600;      /* Wrong value, duplicate in Figma. Fix */
+  } 
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer utilities {
+  /* Thin */
+  .heading1-thin {
+    font-size: var(--font-size-h1-thin);
+    line-height: var(--line-height-40);
+    font-weight: var(--font-weight-light);
+  }
+  .heading2-thin {
+    font-size: var(--font-size-h2-thin);
+    line-height: var(--line-height-40);
+    font-weight: var(--font-weight-light);
+  }
+  .heading3-thin {
+    font-size: var(--font-size-h3-thin);
+    line-height: var(--line-height-32);
+    font-weight: var(--font-weight-light);
+  }
+  .heading4-thin {
+    font-size: var(--font-size-h4-thin);
+    line-height: var(--line-height-28);
+    font-weight: var(--font-weight-light);
+  }
+  .heading5-thin {
+    font-size: var(--font-size-h5-thin);
+    line-height: var(--line-height-26);
+    font-weight: var(--font-weight-light);
+  }
+  .heading6-thin {
+    font-size: var(--font-size-h6-thin);
+    line-height: var(--line-height-20);
+    font-weight: var(--font-weight-light);
+  }
+  .heading7-thin {
+    font-size: var(--font-size-h7-thin);
+    line-height: var(--line-height-20);
+    font-weight: var(--font-weight-light);
+  }
+  .heading8-thin {
+    font-size: var(--font-size-h8-thin);
+    line-height: var(--line-height-20);
+    font-weight: var(--font-weight-light);
+  }
+  .heading9-thin {
+    font-size: var(--font-size-h9-thin);
+    line-height: var(--line-height-18);
+    font-weight: var(--font-weight-light);
+  }
+
+  /********* Regular ********/
+
+  /* NB! Line height is not correct in figma  for this font size */
+  .heading1 {
+    font-size: var(--font-size-h1-regular);
+    line-height: var(--line-height-40);
+    font-weight: var(--font-weight-regular);
+  }
+  .heading2 {
+    font-size: var(--font-size-h2-regular);
+    line-height: var(--line-height-40);
+    font-weight: var(--font-weight-regular);
+  }
+  .heading3 {
+    font-size: var(--font-size-h3-regular);
+    line-height: var(--line-height-40);
+    font-weight: var(--font-weight-regular);
+  }
+  .heading4 {
+    font-size: var(--font-size-h4-regular);
+    line-height: var(--line-height-40);
+    font-weight: var(--font-weight-regular);
+  }
+  .heading5 {
+    font-size: var(--font-size-h5-regular);
+    line-height: var(--line-height-32);
+    font-weight: var(--font-weight-regular);
+  }
+  .heading6 {
+    font-size: var(--font-size-h6-regular);
+    line-height: var(--line-height-28);
+    font-weight: var(--font-weight-regular);
+  }
+  .heading7 {
+    font-size: var(--font-size-h7-regular);
+    line-height: var(--line-height-26);
+    font-weight: var(--font-weight-regular);
+  }
+  .heading8 {
+    font-size: var(--font-size-h8-regular);
+    line-height: var(--line-height-20);
+    font-weight: var(--font-weight-regular);
+  }
+  .heading9 {
+    font-size: var(--font-size-h9-regular);
+    line-height: var(--line-height-20);
+    font-weight: var(--font-weight-regular);
+  }
+  .heading10 {
+    font-size: var(--font-size-h10-regular);
+    line-height: var(--line-height-18);
+    font-weight: var(--font-weight-regular);
+  }
+
 }
